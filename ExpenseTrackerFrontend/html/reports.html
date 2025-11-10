@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reports - Expense Tracker</title>
+    <link rel="stylesheet" href="../css/reports.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div id="loader" class="loader-overlay">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="header-nav">
+        <button onclick="window.location.href='user_options.html'" class="btn btn-back">
+            ← Back to Dashboard
+        </button>
+    </div>
+
+    <div class="container">
+        <h1>📊 View Reports</h1>
+
+        <div class="section filter-section">
+            <div class="form-group">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate">
+            </div>
+            <div class="form-group">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate">
+            </div>
+            <div class="form-group">
+                <label for="categoryDropdown">Categories (optional):</label>
+                <select id="categoryDropdown" multiple>
+                    <option value="">Loading categories...</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" onclick="generateReport()">Generate Report</button>
+        </div>
+        
+        <div id="reportContent" class="hidden">
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h2>Total Budget</h2>
+                    <p id="totalBudget">$0.00</p>
+                </div>
+                <div class="metric-card">
+                    <h2>Total Spending</h2>
+                    <p id="totalSpending">$0.00</p>
+                </div>
+                <div class="metric-card">
+                    <h2>Remaining Budget</h2>
+                    <p id="remainingBudget">$0.00</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Spending Over Time</h2>
+                <div class="chart-container">
+                    <canvas id="spendingChart"></canvas>
+                </div>
+            </div>
+
+            <div class="tables-grid">
+                <div class="section">
+                    <h2>Spending by Category</h2>
+                    <div id="categoryTableContainer">
+                        <p class="empty-message">No category data.</p>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Top 5 Expenses</h2>
+                    <div id="topExpensesContainer">
+                        <p class="empty-message">No expense data.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <div id="noDataMessage" class="empty-message hidden">
+            <p>No expenses found matching your criteria. Try adjusting the filters.</p>
+        </div>
+    </div>
+        
+    <script src="../js/common.js"></script>
+    <script src="../js/reports.js"></script>
+</body>
+</html>

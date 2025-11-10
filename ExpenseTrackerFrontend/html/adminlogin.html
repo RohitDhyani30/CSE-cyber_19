@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Expense Tracker</title>
+    <link rel="stylesheet" href="../css/admin_login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="admin-badge">ADMIN</div>
+        <h2>Admin Login</h2>
+        <p class="subtitle">Administrator Access Only</p>
+        
+        <form>
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" placeholder="Enter admin email" required />
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter admin password" required />
+            </div>
+            <button type="button" onclick="loginAdmin()">Login</button>
+        </form>
+
+        <div class="links">
+            <p>Want to login as a user? <a href="login.html">User Login</a></p>
+        </div>
+    </div>
+    <script src="../js/index.js"></script>
+</body>
+</html>

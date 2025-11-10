@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Expenses - Expense Tracker</title>
+    <link rel="stylesheet" href="../css/expenses.css">
+</head>
+<body>
+
+    <div id="loader" class="loader-overlay">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="header-nav">
+        <button onclick="window.location.href='user_options.html'" class="btn btn-back">
+            ← Back to Dashboard
+        </button>
+    </div>
+
+    <div class="container">
+        <h1>💸 Manage Your Expenses</h1>
+
+        <div class="wallet-display">
+            Your Total Wallet Balance: <span id="walletBalanceDisplay">Loading...</span>
+        </div>
+
+        <div class="section">
+            <h2>Create an Expense</h2>
+            <form id="expenseForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="categoryDropdown">Category:</label>
+                        <select id="categoryDropdown" required>
+                            <option value="">Loading categories...</option>
+                        </select>
+                        
+                        <div id="budgetInfoDisplay" class="budget-info hidden">
+                            Remaining Budget: <span id="remainingBudgetValue">$0.00</span>
+                        </div>
+
+                        <button type="button" id="addCategoryButton" class="btn btn-small" onclick="openCategoryModal()">
+                            + Add Category
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseAmount">Amount ($):</label>
+                        <input type="number" id="expenseAmount" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseDate">Date:</label>
+                        <input type="date" id="expenseDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseDescription">Description:</label>
+                        <input type="text" id="expenseDescription" placeholder="e.g., Lunch meeting">
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-primary" onclick="createExpense()">Create Expense</button>
+                </div>
+            </form>
+            <div id="createResponse"></div> 
+        </div>
+
+        <div class="section">
+            <h2>All Expenses</h2>
+            <div class="table-container">
+                <table id="expenseTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenseTableBody">
+                        <tr>
+                            <td colspan="5">Loading expenses...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCategoryModal()">&times;</span>
+            <h2>Add New Category</h2>
+            <form id="categoryForm">
+                <div class="form-group">
+                    <label for="categoryName">Category Name:</label>
+                    <input type="text" id="categoryName" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoryDescription">Description:</label>
+                    <input type="text" id="categoryDescription" placeholder="Optional">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="submitCategory()">Save Category</button>
+                <div id="categoryResponse"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/expenses.js"></script>
+</body>
+</html>

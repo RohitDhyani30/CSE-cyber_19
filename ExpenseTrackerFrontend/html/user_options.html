@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Dashboard</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/user_options.css">
+</head>
+<body>
+
+    <div id="loader" class="loader-overlay">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Welcome to Expense Tracker</h1>
+            <div class="user-info-card">
+                <div class="user-details">
+                    <p>ID: <span id="userId">Loading...</span></p>
+                    <p>Name: <span id="userName">Loading...</span></p>
+                    <p>Email: <span id="userEmail">Loading...</span></p>
+                </div>
+                <div class="wallet-details">
+                    <p>Wallet Balance</p>
+                    <span id="walletBalance">Loading...</span>
+                    <button class="btn btn-small" onclick="openWalletModal()">Manage Wallet</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="options-grid">
+            <!-- Card 1: Manage Expenses -->
+            <div class="option-card">
+                <h2>💸</h2>
+                <h3>Manage Expenses</h3>
+                <p>View, create, and delete your daily expenses.</p>
+                <a href="expenses.html" class="btn">Go to Expenses</a>
+            </div>
+
+            <!-- Card 2: Manage Budgets -->
+            <div class="option-card">
+                <h2>💰</h2>
+                <h3>Manage Budgets</h3>
+                <p>Set and manage your monthly budgets by category.</p>
+                <a href="budgets.html" class="btn">Go to Budgets</a>
+            </div>
+
+            <!-- Card 3: View Reports -->
+            <div class="option-card">
+                <h2>📊</h2>
+                <h3>View Reports</h3>
+                <p>Analyze your spending habits with charts and graphs.</p>
+                <a href="reports.html" class="btn">Go to Reports</a>
+            </div>
+            
+            <!-- Card 4: AI Forecast -->
+            <div class="option-card ai-card">
+                <h2>🤖</h2>
+                <h3>AI Expense Forecast</h3>
+                <p>Predicted expenses for next month</p>
+                <div class="ai-prediction">
+                    <span id="aiPredictionValue">Analyzing...</span>
+                    <small id="aiPredictionNote">Loading prediction...</small>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+             <button class="btn btn-logout" onclick="logout()">Logout</button>
+        </footer>
+    </div>
+
+    <!-- Wallet Management Modal -->
+    <div id="walletModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeWalletModal()">&times;</span>
+            <h2>Manage Your Wallet</h2>
+            <p>Set your total wallet balance. This is the source for all your budgets.</p>
+            <form id="walletForm">
+                <div class="form-group">
+                    <label for="walletAmount">New Wallet Amount ($):</label>
+                    <input type="number" id="walletAmount" step="0.01" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="submitWalletUpdate()">Save Balance</button>
+                <div id="walletResponse" class="response-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/user_options.js"></script>
+</body>
+</html>

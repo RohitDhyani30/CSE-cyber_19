@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Expense Tracker</title>
+    <link rel="stylesheet" href="../css/admin_dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="admin-badge">ADMIN</div>
+            <h1>Admin Dashboard</h1>
+            <p class="subtitle">Manage and oversee all system operations</p>
+        </header>
+
+        <main class="options-grid">
+            <div class="option-card">
+                <div class="card-icon">👥</div>
+                <h2>User Management</h2>
+                <p>Create, view, update, and delete users</p>
+                <a href="users.html" class="btn">Manage Users</a>
+            </div>
+
+            <div class="option-card">
+                <div class="card-icon">💰</div>
+                <h2>Budgets Management</h2>
+                <p>View and manage all budgets for all users</p>
+                <a href="admin_budgets.html" class="btn">Manage Budgets</a>
+            </div>
+
+            <div class="option-card">
+                <div class="card-icon">💸</div>
+                <h2>Expenses Management</h2>
+                <p>View and manage all expenses in the system</p>
+                <a href="admin_expenses.html" class="btn">Manage Expenses</a>
+            </div>
+        </main>
+
+        <footer>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </footer>
+    </div>
+
+    <!-- === FIX: Added Script Block === -->
+    
+    <!-- 1. Load common.js (which should have setAuthInfo) -->
+    <!-- Make sure this path is correct -->
+    <script src="../js/common.js"></script>
+
+    <!-- 2. Define the logout function -->
+    <script>
+        function logout() {
+
+            if (typeof setAuthInfo === 'function') {
+                setAuthInfo(null);
+            } else {
+                // Fallback if common.js didn't load or has a different function
+                localStorage.removeItem('loggedInUser');
+                localStorage.removeItem('userRole'); // Clear admin role if stored
+            }
+            
+            // Redirect to the admin login page
+            window.location.href = 'adminlogin.html';
+        }
+    </script>
+    
+</body>
+</html>

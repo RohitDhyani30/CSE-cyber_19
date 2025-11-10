@@ -1,0 +1,217 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Header Navigation */
+.header-nav {
+    max-width: 950px;
+    margin: 0 auto 20px;
+}
+
+.btn-back {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(-5px);
+}
+
+/* Main Container */
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* Section Styles */
+.section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.section h2 {
+    color: #1e3c72;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    font-weight: 600;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+}
+
+/* Section Description */
+.section-desc {
+    font-size: 0.95em;
+    color: #64748b;
+    margin-bottom: 20px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.divider {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+    margin: 25px 0;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+label {
+    width: 100px;
+    color: #4a5568;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 12px 15px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: white;
+    flex: 1;
+    min-width: 250px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Button Styles */
+button {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Response Pre Tag */
+pre {
+    background: #f1f5f9;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    overflow-x: auto;
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #334155;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+    font-family: 'Courier New', monospace;
+}
+
+/* Success Message */
+pre.success {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #065f46;
+    border-left-color: #10b981;
+}
+
+/* Error Message */
+pre.error {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    color: #991b1b;
+    border-left-color: #ef4444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        min-width: 100%;
+    }
+}

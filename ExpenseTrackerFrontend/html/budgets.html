@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Budgets - Expense Tracker</title>
+    <link rel="stylesheet" href="../css/budgets.css">
+</head>
+<body>
+
+    <!-- Loader (same as expenses page) -->
+    <div id="loader" class="loader-overlay">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="header-nav">
+        <button onclick="window.location.href='user_options.html'" class="btn btn-back">
+            ← Back to Dashboard
+        </button>
+    </div>
+
+    <div class="container">
+        <h1>💰 Manage Your Budgets</h1>
+
+        <!-- Section 1: Create Budget Form -->
+        <div class="section">
+            <h2>Create a New Budget</h2>
+
+            <!-- === NEW ELEMENT === -->
+            <div class="wallet-display">
+                Your Total Wallet Balance: <span id="walletBalanceDisplay">Loading...</span>
+            </div>
+            <!-- =================== -->
+
+            <form id="budgetForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="categoryDropdown">Category:</label>
+                        <select id="categoryDropdown" required>
+                            <option value="">Loading categories...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budgetAmount">Budget Amount ($):</label>
+                        <input type="number" id="budgetAmount" placeholder="e.g., 500" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startDate">Start Date:</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endDate">End Date:</label>
+                        <input type="date" id="endDate" required>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-primary" onclick="createBudget()">Create Budget</button>
+                </div>
+            </form>
+            <!-- This div will show success/error messages -->
+            <div id="createResponse"></div> 
+        </div>
+
+        <!-- Section 2: All Budgets List -->
+        <div class="section">
+            <h2>Your Current Budgets</h2>
+            <div id="budgetsList" class="budget-list">
+                <!-- JavaScript will populate this -->
+                <p class="empty-message">Loading budgets...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. Load the "Toolbox" first -->
+    <script src="../js/common.js"></script>
+    
+    <!-- 2. Load the page-specific file second -->
+    <script src="../js/budgets.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,426 @@
+/* General Body & Container */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    margin: 0;
+}
+
+/* Loader Styles */
+.loader-overlay {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-spinner {
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-top: 6px solid #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Header Navigation */
+.header-nav {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+}
+
+.btn-back {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(-5px);
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #f5576c;
+    font-size: 2.2em;
+    margin: 0 0 30px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styles */
+.section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.create-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+}
+
+.create-section h2 {
+    color: #5a67d8;
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+.create-section p {
+    color: #4a5568;
+    font-size: 0.95em;
+    margin: 0;
+}
+
+.section h2 {
+    color: #5a67d8;
+    margin: 0 0 20px 0;
+    font-size: 1.5em;
+    border-bottom: 3px solid #f093fb;
+    padding-bottom: 8px;
+}
+
+/* Search Container Styles */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.search-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.btn-search {
+    padding: 10px 24px;
+    white-space: nowrap;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(113, 128, 150, 0.3);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(113, 128, 150, 0.5);
+}
+
+.btn-clear {
+    padding: 10px 24px;
+    white-space: nowrap;
+}
+
+/* Form Styles */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #4a5568;
+    font-size: 0.9em;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #f093fb;
+    box-shadow: 0 0 0 3px rgba(240, 147, 251, 0.1);
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(240, 147, 251, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(240, 147, 251, 0.5);
+}
+
+.btn-action {
+    padding: 6px 14px;
+    font-size: 13px;
+    margin: 0 3px;
+    min-width: 70px;
+}
+
+.btn-action-edit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-action-delete {
+    background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);
+    color: white;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85em;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #f7fafc;
+}
+
+td {
+    padding: 12px;
+    color: #4a5568;
+    font-size: 0.9em;
+}
+
+/* Response Message Styling */
+.response-message {
+    margin: 15px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+    font-size: 0.9em;
+}
+
+.success {
+    background: #c6f6d5;
+    color: #22543d;
+    display: block !important;
+}
+
+.error {
+    background: #fed7d7;
+    color: #742a2a;
+    display: block !important;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+    position: relative;
+}
+
+@keyframes slideIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    color: #a0aec0;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #fc466b;
+}
+
+.modal-content h2 {
+    color: #f5576c;
+    margin: 0 0 20px 0;
+    font-size: 1.6em;
+}
+
+/* Wallet Info Styles */
+.hidden {
+    display: none !important;
+}
+
+.wallet-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #234e52;
+    border: 2px solid #81e6d9;
+}
+
+.wallet-label {
+    color: #2c7a7b;
+}
+
+.wallet-amount {
+    font-weight: 700;
+    color: #38a169;
+    font-size: 1.1em;
+}
+
+.wallet-amount.negative {
+    color: #dc3545;
+}
+
+/* Form Row for Compact Layout */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .create-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-search, .btn-clear {
+        width: 100%;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        padding: 25px 20px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Expense Tracker</title>
+    <link rel="stylesheet" href="../css/users.css">
+</head>
+<body>
+    <div class="header-nav">
+        <button onclick="window.location.href='admindashboard.html'" class="btn-back">
+            ← Back to Admin Dashboard
+        </button>
+    </div>
+
+    <div class="container">
+        <h1>👤 User Management</h1>
+
+        <div class="section">
+            <h2>Create A User</h2>
+            <form id="createUserForm">
+                <div class="form-group">
+                    <label for="userName">Name:</label>
+                    <input type="text" id="userName" required>
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email:</label>
+                    <input type="text" id="userEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="userPassword">Password:</label>
+                    <input type="text" id="userPassword" placeholder="Default: pass@123">
+                </div>
+                <button type="button" id="createUserButton" onclick="createUser()">Create User</button>
+            </form>
+            <pre id="CreateUser"></pre>
+        </div>
+
+        <div class="section">
+            <h2>Get All Users</h2>
+            <button type="button" id="fetchAllUsers" onclick="fetchAllUsers()">Fetch All Users</button>
+            <pre id="GetUser"></pre>
+        </div>
+
+        <div class="section">
+            <h2>Get Users By ID</h2>
+            <div class="form-group">
+                <label for="userId">User ID:</label>
+                <input type="number" id="userId" required>
+            </div>
+            <button type="button" id="fetchUsersById" onclick="fetchUsersByID()">Fetch Users By Id</button>
+            <pre id="GetUserById"></pre>
+        </div>
+
+        <div class="section">
+            <h2>Update User</h2>
+            <p class="section-desc">First, enter a User ID. Then fill in *only* the fields you want to change.</p>
+            
+            <form id="updateUserForm">
+                <div class="form-group">
+                    <label for="updateUserId">User ID:</label>
+                    <input type="number" id="updateUserId" required placeholder="User ID to update">
+                </div>
+                
+                <hr class="divider">
+                
+                <div class="form-group">
+                    <label for="updateUserName">Name:</label>
+                    <input type="text" id="updateUserName" placeholder="Leave blank to keep current name">
+                </div>
+                <div class="form-group">
+                    <label for="updateUserEmail">Email:</label>
+                    <input type="text" id="updateUserEmail" placeholder="Leave blank to keep current email">
+                </div>
+                <div class="form-group">
+                    <label for="updateUserPassword">Password:</label>
+                    <input type="text" id="updateUserPassword" placeholder="Leave blank to keep current password">
+                </div>
+                <div class="form-group">
+                    <label for="updateUserWallet">Wallet:</label>
+                    <input type="number" id="updateUserWallet" step="0.01" placeholder="Leave blank to keep current balance">
+                </div>
+            </form>
+
+            <button type="button" id="updateUserButton" onclick="updateUser()">Update User</button>
+            <pre id="UpdateUser"></pre>
+        </div>
+
+        <div class="section">
+            <h2>Delete User</h2>
+            <div class="form-group">
+                <label for="deleteUserId">User ID:</label>
+                <input type="number" id="deleteUserId" required>
+            </div>
+            <button type="button" id="deleteUserButton" onclick="deleteUser()">Delete User</button>
+            <pre id="DeleteUser"></pre>
+        </div>
+    </div>
+
+    <script src="../js/users.js"></script>
+</body>
+</html>
